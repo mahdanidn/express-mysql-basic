@@ -4,7 +4,7 @@ const getAllUsers = async (req, res) => {
   try {
     const [data] = await UserModel.getAllUsers();
 
-    res.json({
+    res.status(200).json({
       message: "Get All users success",
       data,
     });
@@ -17,13 +17,11 @@ const getAllUsers = async (req, res) => {
 };
 
 const createNewUser = async (req, res) => {
-  // console.log(req.body);
   const { body } = req;
-
   try {
     await UserModel.createNewUser(body);
 
-    res.json({
+    res.status(201).json({
       message: "CREATE new user success",
       data: body,
     });
@@ -40,9 +38,12 @@ const updateUser = async (req, res) => {
   const { body } = req;
   try {
     await UserModel.updateUser(idUser, body);
-    res.json({
+    res.status(200).json({
       message: "UPDATE user success",
-      data: body,
+      data: {
+        id: idUser,
+        ...body,
+      },
     });
   } catch (error) {
     res.status(500).json({
@@ -57,7 +58,7 @@ const deleteUser = async (req, res) => {
 
   try {
     await UserModel.deleteUser(idUser);
-    res.json({
+    res.status(200).json({
       message: "DELETE user success",
     });
   } catch (error) {

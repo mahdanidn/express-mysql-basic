@@ -13,10 +13,9 @@ const createNewUser = (body) => {
 };
 
 const updateUser = (idUser, body) => {
-  // console.log("body models :", body);
   const SQLQuery = `UPDATE users
                       SET name='${body.name}', email='${body.email}', address='${body.address}'
-                        WHERE id=${iidUserd}`;
+                        WHERE id=${idUser}`;
 
   return dbPool.execute(SQLQuery);
 };
