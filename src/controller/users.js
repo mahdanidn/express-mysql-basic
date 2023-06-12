@@ -21,7 +21,7 @@ const getUserDetail = async (req, res) => {
 
   try {
     const [data] = await UserModel.getUserDetail(idUser);
-    res.json({
+    res.status(200).json({
       message: "GET user detail success",
       data,
     });
@@ -93,3 +93,4 @@ module.exports = {
   updateUser,
   deleteUser,
 };
+

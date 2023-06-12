@@ -5,7 +5,7 @@ const createNewPost = async (req, res) => {
   try {
     await PostModel.createNewPost(body);
 
-    res.json({
+    res.status(200).json({
       message: "CREATE new post success",
       data: body,
     });
@@ -22,7 +22,7 @@ const getAllPostByIdUser = async (req, res) => {
 
   try {
     const [data] = await PostModel.getAllPostByIdUser(idUser);
-    res.json({
+    res.status(200).json({
       message: "GET all posts success",
       data,
     });
@@ -39,7 +39,7 @@ const getDetailPostByIdPost = async (req, res) => {
 
   try {
     const [data] = await PostModel.getPostByIdPost(idPost);
-    res.json({
+    res.status(200).json({
       message: "GET posts detail success",
       data,
     });
@@ -56,7 +56,7 @@ const updatePost = async (req, res) => {
   const { body } = req;
   try {
     await PostModel.updatePost(idPost, body);
-    res.json({
+    res.status(200).json({
       message: "UPDATE post success",
       data: body,
     });
@@ -73,7 +73,7 @@ const deletePost = async (req, res) => {
 
   try {
     await PostModel.deletePost(idPost);
-    res.json({
+    res.status(200).json({
       message: "DELETE post success",
     });
   } catch (error) {
