@@ -16,6 +16,23 @@ const getAllUsers = async (req, res) => {
   }
 };
 
+const getUserDetail = async (req, res) => {
+  const { idUser } = req.params;
+
+  try {
+    const [data] = await UserModel.getUserDetail(idUser);
+    res.status(200).json({
+      message: "GET user detail success",
+      data,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Server error",
+      serverMessage: error,
+    });
+  }
+};
+
 const createNewUser = async (req, res) => {
   const { body } = req;
   try {
@@ -71,7 +88,9 @@ const deleteUser = async (req, res) => {
 
 module.exports = {
   getAllUsers,
+  getUserDetail,
   createNewUser,
   updateUser,
   deleteUser,
 };
+
