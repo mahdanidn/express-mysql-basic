@@ -10,6 +10,9 @@ router.post("/", UserController.createNewUser);
 // GET DATA USERS
 router.get("/", UserController.getAllUsers);
 
+// GET DATA USERS DETAIL
+router.get("/:idUser", UserController.getUserDetail);
+
 // UPDATE - PATCH
 router.patch("/:idUser", UserController.updateUser);
 
