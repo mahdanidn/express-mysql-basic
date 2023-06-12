@@ -9,6 +9,7 @@ const app = express();
 
 app.use(middlewareLogRequest);
 app.use(express.json());
+app.use("/assets", express.static("public/images"));
 
 app.use("/users", usersRoute);
 
