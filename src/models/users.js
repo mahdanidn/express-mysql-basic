@@ -13,14 +13,14 @@ const getUserDetail = (idUser) => {
 };
 
 const createNewUser = (body) => {
-  const SQLQuery = `INSERT INTO users (name, email, address) VALUES ('${body.name}', '${body.email}', '${body.address}')`;
+  const SQLQuery = `INSERT INTO users (name, email, age, gender) VALUES ('${body.name}', '${body.email}', '${body.age}', '${body.gender}')`;
 
   return dbPool.execute(SQLQuery);
 };
 
 const updateUser = (idUser, body) => {
   const SQLQuery = `UPDATE users
-                      SET name='${body.name}', email='${body.email}', address='${body.address}'
+                      SET name='${body.name}', email='${body.email}', age='${body.age}', gender='${body.gender}'
                         WHERE id=${idUser}`;
 
   return dbPool.execute(SQLQuery);
