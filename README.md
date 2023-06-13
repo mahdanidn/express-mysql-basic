@@ -1,26 +1,29 @@
-# HTTP Status Code
+<div align="center">
+  <h1>Express JS Backend</h1>
+</div>
 
-**Successful Responses (2xx)**
+First Step, Instal node_modules:
 
-- 200 OK (GET, PATCH)
+```bash
+Set up .env
+```
 
-- 201 Created (POST, PUT)
+Second Step, run the development server:
 
-**Client Error Responses (4xx)**
+```bash
+npm run start
+# or
+yarn start
+# or
+pnpm start
+```
 
-- 400 Bad Request
+Thrid Step, run the development server:
 
-- 401 Unauthorized
-
-- 403 Forbidden
-
-- 404 Not Found
-
-- 405 Method Not Allowed
-
-**Server error responses (5xx)**
-
-- 500 Internal Server Error
-
-**Source:**
-https://rapidapi.com/guides/http-status-code
+```bash
+npm run start
+# or
+yarn start
+# or
+pnpm start
+```
